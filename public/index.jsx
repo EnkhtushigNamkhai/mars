@@ -7,12 +7,19 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from '../components/App';
 import reducers from '../reducers';
 
+// import { Router, Route, browserHistory } from 'react-router';
+
+import { BrowserRouter } from 'react-router-dom';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <MuiThemeProvider>
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <App />
+  
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+
     </Provider>
   </MuiThemeProvider>,
   document.getElementById('app'),
